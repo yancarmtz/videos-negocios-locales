@@ -1,0 +1,417 @@
+/* Cabecera */
+.cabecera__container{
+    display: flex;   /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                     /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                     lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor.
+                     Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                     lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño 
+                     y la distribución de los elementos dentro del contenedor. */
+    justify-content: space-between; /*PARA HAYA UN ESPACIO ENTRE LOS ELEMENTOS EN PANTALLA Y NO AFECTE AL CAMBIAR LA RESOLUCION EN PANTALLA */
+                                    /*La propiedad justify-content: space-between en Flexbox se utiliza para distribuir los elementos de manera que haya un espacio igual entre ellos, 
+                                      pero no en los extremos del contenedor. Esto significa que el primer elemento estará alineado con el inicio del contenedor, el último elemento 
+                                      estará alineado con el final del contenedor, y el espacio entre los elementos será uniforme.
+
+Por ejemplo, si tienes una serie de elementos en un contenedor y aplicas justify-content: space-between, el primer elemento estará alineado con el inicio del contenedor, el último elemento estará alineado con el final del contenedor, y el espacio entre los elementos será uniforme, lo que es útil para crear diseños donde los elementos están separados por un espacio igual y están alineados en los extremos del contenedor. */
+    align-items: center; /*La propiedad align-items: center en CSS se utiliza para alinear verticalmente los elementos de un contenedor flex. 
+                           Esto significa que los elementos se alinearán en el centro del eje transversal del contenedor, 
+                           lo que es útil para centrar elementos verticalmente dentro de un contenedor flex. */
+    position: fixed; /*PARA QUE QUEDEN FIJOS LOS ELEMENTOS EN PANTALLA Y NO SE MUEVAN CON EL SCROLL */
+    top: 0;
+}
+
+.cabecera__buscar__item{
+    display: none; /*El uso de display: none en CSS sirve para ocultar un elemento en la página web. 
+                    Esto significa que el elemento no se mostrará en la pantalla, ocupando ningún espacio en el diseño.
+                    Es útil para ocultar elementos en dispositivos específicos, como en el caso de la responsividad, 
+                    donde se puede ocultar un campo de búsqueda en dispositivos móviles y mostrarlo en tabletas y computadoras. */
+}
+
+/* Menu */
+.menu__container{
+    position: fixed; /*La propiedad CSS "position: fixed" se utiliza para posicionar un elemento de forma fija en relación con la ventana del navegador, 
+                       lo que significa que el elemento permanecerá en la misma posición incluso si la página se desplaza. Esto es útil para elementos como 
+                       barras de navegación o menús laterales que deben permanecer visibles en todo momento, independientemente de la posición del resto del contenido de la página. */
+    bottom: 0%; /*La propiedad "bottom: 0%;" en CSS se utiliza para establecer la distancia entre el borde inferior de un elemento y el borde inferior del contenedor padre. 
+                  Al establecer "bottom: 0%", el elemento se posicionará en la parte inferior del contenedor padre.
+                  Por ejemplo, si tienes un elemento con "position: fixed" y "bottom: 0%", se fijará en la parte inferior de la ventana del navegador, 
+                  independientemente de si se desplaza la página. */
+    height: 75px; /*La propiedad height en CSS se utiliza para establecer la altura de un elemento. En el caso específico de height: 75px, 
+                    se está definiendo que la altura del elemento al que se aplica esta regla será de 75 píxeles.
+                    Esta regla es útil cuando se desea controlar el tamaño vertical de un elemento, como un contenedor, 
+                    una imagen o un bloque de texto. Al definir la altura de un elemento, se puede garantizar que tenga dimensiones específicas
+                         y se ajuste al diseño deseado de la página web.*/
+    width: 100%; /*La propiedad CSS "width: 100%" se utiliza para establecer el ancho de un elemento como un porcentaje del ancho del contenedor padre. 
+                   Esto significa que el elemento ocupará el 100% del ancho del contenedor padre en el que se encuentra.
+                   Por ejemplo, si tienes un contenedor con ancho definido y dentro de ese contenedor colocas un elemento con "width: 100%", 
+                   este elemento ocupará todo el ancho del contenedor padre. */
+ }
+
+
+ .menu__lista{
+    display: flex; /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                   /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                     lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor. 
+                     Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                     lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño */                     
+    justify-content: space-around; /*Para que los elementos estén distribuidos uniformemente en todos los lados del contenedor */
+                                   /*La propiedad justify-content: space-around en Flexbox se utiliza para distribuir uniformemente 
+                                     el espacio alrededor de los elementos en un contenedor. Esto significa que habrá un espacio igual 
+                                     entre cada elemento, así como también un espacio igual en los extremos del contenedor.
+                                     Por ejemplo, si tienes una serie de elementos en un contenedor y aplicas justify-content: space-around, 
+                                     cada elemento tendrá el mismo espacio entre ellos y también habrá un espacio igual en los extremos del contenedor, 
+                                     lo que crea un diseño equilibrado y uniforme. */
+    height: 100% ; /*Especificamos una altura para el contenedor, pero le asignamos "height: 100%" para que ocupe todo el espacio disponible en su contenedor*/
+              
+    
+
+ }
+
+
+ .menu__lista li{
+    align-self: center;
+ }
+ 
+
+ .menu__itens{
+    display: flex; /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                    /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                    lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor. 
+                    Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                    lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño */                   
+    flex-direction: column; /*EN ESTE CASO LOS ICONOS SE POSICION ARRIBA DEL TEXTO QUEDANDO EN COLUMNA */
+                            /*La propiedad flex-direction: column es una de las propiedades de Flexbox en CSS que se utiliza para establecer 
+                              la dirección principal de los elementos flexibles. Al usar flex-direction: column, los elementos se colocan uno encima del otro en una columna, 
+                              en lugar de en una fila como lo harían con la dirección predeterminada row. Esto es útil para diseñar diseños en los que se desea 
+                              que los elementos se apilen verticalmente en lugar de estar uno al lado del otro. */
+    gap: 5px; /*La propiedad gap en CSS se utiliza para establecer el espacio entre los elementos flexibles dentro de un contenedor que utiliza Flexbox. 
+                En el contexto de la lección, se menciona que se aplica la propiedad gap con un valor de cinco píxeles para agregar un espacio entre el ícono 
+                y el texto en el menú.
+                En resumen, gap: 5px se utiliza para definir el espacio entre los elementos flexibles, lo que permite crear un espacio uniforme y controlado entre ellos. */
+ }
+
+
+/*La regla .menu__lista:nth-child(2) en CSS se refiere a un selector que apunta al segundo elemento hijo que cumple con la clase .menu__lista dentro de su contenedor principal.
+Esto significa que se está seleccionando el segundo elemento que cumple con la clase .menu__lista para aplicarle estilos específicos. Esta pseudo-clase es útil para
+ seleccionar elementos específicos dentro de un contenedor, lo que permite aplicar estilos de manera selectiva a elementos particulares. */
+ .menu__lista:nth-child(2),
+ .menu__lista:nth-child(3),
+ .menu__lista:nth-child(4){
+    display: none; /*Con esto se ocultan las demas listas */
+ }
+
+ 
+
+ 
+/*Seccion superior*/
+.superior__seccion__container{
+    display: flex; /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+    align-items: center; /*La propiedad align-items: center en CSS se utiliza para alinear verticalmente los elementos de un contenedor flex. 
+                          Esto significa que los elementos se alinearán en el centro del eje transversal del contenedor, 
+                          lo que es útil para centrar elementos verticalmente dentro de un contenedor flex.*/
+    white-space: nowrap; /* Asegura que los elementos se muestren en una sola línea */
+                         /*La propiedad white-space: nowrap en CSS se utiliza para especificar que el texto dentro de un elemento 
+                           no debe envolverse en múltiples líneas (EN ESTE CASO LOS BOTONES CON TEXTO LARGO SE MANTIENEN COMO LOS BOTONES DE TEXTO PEQUEÑO SIN PERDER SU FORMA).
+                           Esto significa que el texto se mostrará en una sola línea,
+                           sin importar la longitud, evitando que se divida en varias líneas. */
+    overflow: scroll; /*La propiedad overflow: scroll en CSS se utiliza para agregar una barra de desplazamiento a un elemento cuando su contenido excede el tamaño del contenedor.
+                        Esto permite al usuario desplazarse para ver el contenido que no cabe dentro del contenedor. */
+    gap: 15px; /*La propiedad gap en CSS se utiliza para especificar el espacio entre las filas y columnas de un grid o entre los elementos de un contenedor flex. 
+                 En este caso, gap: 15px establece un espacio de 15 píxeles entre los elementos del contenedor flex, lo que permite crear un diseño más espaciado y organizado. */
+ 
+}
+
+
+
+ /* Seccion Videos */
+ .videos__item{
+    height: 303px;
+    width: 400px;   
+    flex-grow: 1; /*PARA QUE DESAPAREZCA EL ESPACIO DERECHO DE EL FINAL DEL CONTENEDOR */
+                  /*La propiedad flex-grow: 1; se utiliza en Flexbox para especificar cómo se distribuirá el espacio adicional dentro de un contenedor flexible.
+                   Al establecer flex-grow: 1; en un elemento flex, le estás indicando que debe crecer y ocupar todo el espacio disponible dentro del contenedor 
+                   flexible. Esto es útil para distribuir el espacio restante de manera equitativa entre los elementos flexibles. */
+}
+
+/*.videos__container LA CLASE PADRE PARA QUE SE MUEVAN TODOS LOS ELEMENTOS DEL CONTENEDOR */
+.videos__container{
+    display: flex; /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                    /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                    lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor. 
+                    Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                    lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño */   
+    flex-wrap: wrap; /* PARA QUE LOS ELEMENTOS SE ACOMODEN EN VARIAS COLUMNAS EN TODO EL CONTENEDOR PADRE */
+                    /*La propiedad flex-wrap: wrap se utiliza para especificar si los elementos flexibles deben envolverse en múltiples líneas o no 
+                     (en este caso se organizan en varias columnas). Si se establece en wrap, los elementos se envolverán en líneas adicionales si no caben en la línea actual. 
+                     Esto es útil para crear diseños responsivos donde los elementos se reorganizan en varias líneas en dispositivos más pequeños. */
+    gap: 10px; /*La propiedad gap: 10px; se utiliza en CSS Grid y Flexbox para especificar el espacio entre las filas y columnas de los elementos hijos.
+                 Al establecer gap: 10px;, estás creando un espacio de 10 píxeles entre los elementos dentro de un contenedor.
+                 Por ejemplo, si tienes una cuadrícula de elementos o una serie de elementos flexibles, al aplicar gap: 10px; 
+                 se creará un espacio uniforme de 10 píxeles entre cada uno de ellos. */ 
+    
+}
+
+ /* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */ 
+
+.descripcion-video {
+    margin-top: 1rem; /*La propiedad margin-top: 1rem; se utiliza para establecer el margen superior de un elemento en relación con el tamaño de la fuente raíz. Un rem es 
+                        una unidad de medida relativa que se basa en el tamaño de la fuente raíz del documento. Por lo tanto, al aplicar margin-top: 1rem;, estás 
+                        especificando que el margen superior del elemento será igual a una vez el tamaño de la fuente raíz.
+
+    Esta propiedad es útil para crear espacios uniformes y proporcionales en el diseño de la página, ya que el margen se ajustará automáticamente si el tamaño de la fuente raíz cambia. */
+    display: flex; /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                    /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                    lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor. 
+                    Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                    lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño */   
+    align-items: start; /*La propiedad flex-grow: 1; se utiliza para especificar la proporción en la que los elementos flexibles se expanden para llenar 
+                          el espacio disponible en el contenedor flexbox. Al asignar un valor de 1 a flex-grow, estás indicando que el elemento debe crecer 
+                          en relación con otros elementos flexibles en el mismo contenedor. Si todos los elementos tienen flex-grow: 1;, se expandirán 
+                          de manera equitativa para ocupar el espacio disponible. */ 
+    
+}
+
+.descripcion-video img {
+    margin-right: 1rem; /*El margin-right: 1rem; se utiliza para establecer un margen a la derecha de un elemento en relación con su contenedor. 
+                          La unidad rem se refiere al tamaño de la fuente del elemento. Por lo tanto, al utilizar margin-right: 1rem;, estás estableciendo un margen
+                          a la derecha que es igual al tamaño de la fuente del elemento. Esto puede ser útil para crear espaciado entre elementos en un diseño flexible 
+                          y responsivo. */
+    flex-shrink: 0;  /*  Evita que la imagen se reduzca */
+                     /*La propiedad flex-shrink: 0; se utiliza para especificar si un elemento puede reducir su tamaño para ajustarse al contenedor en un diseño flexible.
+                      Al establecer flex-shrink en 0, estás indicando que el elemento no puede reducir su tamaño si es necesario. Esto puede ser útil para evitar 
+                      que ciertos elementos se achiquen demasiado en un diseño flexible, manteniendo su tamaño original. */
+    
+}
+
+.detalles__video {
+    flex-direction: column; /*La propiedad flex-direction: column; se utiliza para establecer la dirección en la que los elementos flexibles se colocan en un contenedor. 
+                              Al usar flex-direction: column;, estás indicando que los elementos flexibles se colocarán en columnas, uno debajo del otro, en lugar de en 
+                              filas como es el comportamiento predeterminado.
+                              Esta propiedad es útil cuando deseas organizar los elementos en una disposición vertical en lugar de una horizontal. 
+                              Por ejemplo, puede ser útil para diseñar diseños de página que requieran que los elementos se apilen verticalmente en 
+                              lugar de estar uno al lado del otro. */
+    text-align:left; /*La propiedad text-align: left; se utiliza para alinear el texto de un elemento hacia la izquierda dentro de su contenedor. 
+                       Esto significa que el texto dentro del elemento se alineará a la izquierda, dejando un margen derecho irregular.
+                       Es útil cuando deseas que el texto dentro de un elemento, como un párrafo o un encabezado, se alinee a la izquierda 
+                       en lugar de estar centrado o alineado a la derecha. */
+
+}
+
+.detalles__video h3{
+    margin-bottom: 10px; /*La propiedad margin-bottom: 10px; se utiliza para establecer un margen en la parte inferior de un elemento. Al asignar un valor de 10px, 
+                           estás definiendo un margen de 10 píxeles en la parte inferior del elemento.
+                            Esta propiedad es útil para crear espaciado entre elementos en un diseño web, permitiendo que haya un espacio específico entre 
+                            un elemento y el que le sigue. */
+}
+
+
+
+
+/*Rodapie (pie de pagina) */
+.rodapie__container{
+    display: flex;
+   /* flex-direction: column; /*La propiedad flex-direction: column se utiliza para especificar que los elementos hijos de un contenedor flex se deben organizar 
+                                en una columna en lugar de en una fila. Esto es útil cuando se desea que los elementos se apilen verticalmente en lugar 
+                                de estar uno al lado del otro. */
+   /* flex-wrap: wrap; /*La propiedad flex-wrap: wrap se utiliza para especificar si los elementos flexibles deben envolverse en múltiples líneas o no 
+                        (en este caso se organizan en varias columnas). Si se establece en wrap, los elementos se envolverán en líneas adicionales si no caben en la línea actual. 
+                        Esto es útil para crear diseños responsivos donde los elementos se reorganizan en varias líneas en dispositivos más pequeños. */
+    flex-flow: column wrap; /*La propiedad flex-flow: column wrap, combina las propiedades flex-direction y flex-wrap en una sola declaración. 
+                              Esto significa que los elementos hijos se organizarán en columnas y se envolverán en líneas adicionales si no caben en la columna actual.
+                             Esta combinación es útil para crear diseños complejos y altamente personalizados en aplicaciones web, especialmente en el contexto de diseño responsivo. */
+}
+
+
+/* TABLET */
+@media (min-width:834px) {
+
+    /* Cabecera */
+    .cabecera__buscar__item{
+        display: block; /*El uso de display: block en CSS sirve para cambiar un elemento para que se muestre como un bloque en la página web. 
+                         Los elementos de bloque siempre comienzan en una nueva línea y ocupan todo el ancho disponible. Esto es útil para elementos como párrafos, 
+                         encabezados y divisiones (divs) que necesitan ocupar todo el ancho disponible. */
+    }
+
+
+    /* MENU LATERAL PARA PANTALLAS DE TABLETS */
+    .menu__container{
+        position: fixed; /*La propiedad CSS "position: fixed" se utiliza para posicionar un elemento de forma fija en relación con la ventana del navegador, 
+                        lo que significa que el elemento permanecerá en la misma posición incluso si la página se desplaza. Esto es útil para elementos como 
+                        barras de navegación o menús laterales que deben permanecer visibles en todo momento, independientemente de la posición del resto del contenido de la página. */
+        left: 0; /*La propiedad left: 0; se utiliza para posicionar un elemento en relación con su contenedor padre. En el contexto de Flexbox, esta propiedad no se utiliza directamente, 
+                ya que se enfoca en el posicionamiento de elementos dentro de un contenedor flex. Sin embargo, en otros contextos de diseño web, como el posicionamiento absoluto 
+                o relativo, la propiedad left se utiliza para establecer la distancia del borde izquierdo del elemento al borde izquierdo de su contenedor padre. Esto puede ser útil 
+                para alinear elementos o crear diseños específicos. */
+
+        height: auto; /*La propiedad height: auto; se utiliza para permitir que la altura de un elemento se ajuste automáticamente según su contenido. Esto es útil
+                        cuando se desea que la altura de un elemento se adapte dinámicamente al tamaño del contenido que contiene, sin necesidad de establecer una altura fija.
+                         En el contexto de diseño web, esto es especialmente útil para elementos como contenedores de texto, imágenes u otros elementos que pueden variar 
+                         en altura. Al establecer height: auto;, el elemento se expandirá o contraerá según sea necesario para acomodar su contenido.*/
+        width: 74px; /*La propiedad width: 74px se utiliza para establecer el ancho de un elemento en una página web. Al definir un valor específico en píxeles 
+                       (en este caso, 74 píxeles), se fija el ancho del elemento a esa medida.
+                       Esta propiedad es útil cuando se desea controlar el ancho de un elemento de forma precisa, como en el caso de imágenes, botones
+                        o elementos de navegación. Al establecer un ancho específico, se puede garantizar que el elemento se muestre de manera consistente 
+                        en diferentes dispositivos y tamaños de pantalla. */
+        top: 80px; /*La propiedad top: 80px; se utiliza para posicionar un elemento con respecto al borde superior de su contenedor padre.
+                     Al establecer un valor específico en píxeles (en este caso, 80 píxeles), se desplaza el elemento hacia abajo desde el borde superior de su contenedor padre.
+                     Esta propiedad es comúnmente utilizada en el contexto de posicionamiento absoluto o relativo para controlar la ubicación vertical de un elemento en una página web. 
+                     Al definir un valor para top, se puede ajustar la posición vertical de un elemento de manera precisa. */
+    }
+
+
+    .menu__lista{                 
+        justify-content: flex-start; /*Para que los elementos estén distribuidos uniformemente en todos los lados del contenedor */
+                                    /*La propiedad justify-content: flex-start; se utiliza en CSS para alinear los elementos flexibles en el contenedor flexbox. 
+                                      Cuando se aplica esta propiedad, los elementos se alinean hacia el inicio del contenedor flexbox, dejando espacio adicional 
+                                      al final si hay espacio sobrante. Es decir, los elementos se alinearán en el extremo izquierdo del contenedor si el texto 
+                                      está en un idioma que se lee de izquierda a derecha, o en el extremo derecho si el texto está en un idioma que se lee de 
+                                      derecha a izquierda. */ 
+        flex-direction: column; /*La propiedad flex-direction: column se utiliza en Flexbox para organizar los elementos en una columna en lugar de en una fila. 
+                                Esto significa que los elementos se apilan verticalmente en lugar de estar uno al lado del otro. Es útil cuando se desea diseñar un diseño vertical, 
+                                como en el caso de menús desplegables o listas de elementos. */
+        gap: 33px; /*La propiedad gap: 33px; se utiliza en Flexbox para establecer el espacio entre las filas y columnas de los elementos flexibles. 
+                    Es una forma conveniente de agregar espacios uniformes entre los elementos sin tener que manipular márgenes o rellenos individualmente. 
+                    Esta propiedad es especialmente útil cuando se trabaja con cuadrículas o diseños en los que se desea un espaciado uniforme entre los elementos. */
+        padding-top: 15px; /*La propiedad padding-top: 15px; se utiliza para agregar relleno en la parte superior de un elemento. Este relleno crea espacio entre el contenido del elemento 
+                            y su borde superior. Es útil para ajustar el diseño y la disposición de los elementos en una página web, permitiendo controlar el espacio entre el contenido 
+                            y los límites del elemento. */
+                
+        
+
+    }
+
+
+    .menu__lista li{
+        align-self: center; /*La propiedad align-self: center; se utiliza en Flexbox para alinear un elemento flex individual verticalmente en el centro dentro de su contenedor flex. 
+                              Esto significa que el elemento se alineará en el centro vertical, independientemente de la alineación vertical de los demás elementos flex dentro del 
+                              contenedor.
+                              Es útil cuando se desea controlar la alineación vertical de un elemento específico dentro de un diseño flex. Esta propiedad proporciona flexibilidad 
+                              al permitir que un elemento se alinee de manera diferente a los demás elementos flex dentro del mismo contenedor. */
+    }
+    
+
+    
+    .menu__itens{
+        display: flex; /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                        /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                        lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor. 
+                        Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                        lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño */                   
+        flex-direction: column; /*EN ESTE CASO LOS ICONOS SE POSICION ARRIBA DEL TEXTO QUEDANDO EN COLUMNA */
+                                /*La propiedad flex-direction: column es una de las propiedades de Flexbox en CSS que se utiliza para establecer 
+                                la dirección principal de los elementos flexibles. Al usar flex-direction: column, los elementos se colocan uno encima del otro en una columna, 
+                                en lugar de en una fila como lo harían con la dirección predeterminada row. Esto es útil para diseñar diseños en los que se desea 
+                                que los elementos se apilen verticalmente en lugar de estar uno al lado del otro. */
+        gap: 5px; /*La propiedad gap en CSS se utiliza para establecer el espacio entre los elementos flexibles dentro de un contenedor que utiliza Flexbox. 
+                    En el contexto de la lección, se menciona que se aplica la propiedad gap con un valor de cinco píxeles para agregar un espacio entre el ícono 
+                    y el texto en el menú.
+                    En resumen, gap: 5px se utiliza para definir el espacio entre los elementos flexibles, lo que permite crear un espacio uniforme y controlado entre ellos. */
+    }
+
+
+
+    /*Rodapie (pie de pagina) */
+    .rodapie__container{
+        justify-content: space-between; /*PARA HAYA UN ESPACIO ENTRE LOS ELEMENTOS EN PANTALLA Y NO AFECTE AL CAMBIAR LA RESOLUCION EN PANTALLA */
+    }
+}
+
+
+/* ESCRITORIO */
+@media (min-width:1440px){
+
+    .menu__container{
+        width: 239px; /*La propiedad width: 239px se utiliza para establecer el ancho de un elemento en una página web. Al definir un valor específico en píxeles 
+                        (en este caso, 239 píxeles), se fija el ancho del elemento a esa medida.
+                        Esta propiedad es útil cuando se desea controlar el ancho de un elemento de forma precisa, como en el caso de imágenes, contenedores
+                         o elementos de diseño. Al establecer un ancho específico, se puede garantizar que el elemento se muestre de manera consistente 
+                         en diferentes dispositivos y tamaños de pantalla. */
+        overflow: scroll; /*La propiedad overflow: scroll en CSS se utiliza para agregar una barra de desplazamiento a un elemento cuando su contenido excede el tamaño del contenedor.
+                            Esto permite al usuario desplazarse para ver el contenido que no cabe dentro del contenedor. */
+
+
+
+    }
+
+    /*La regla .menu__lista:nth-child(2) en CSS se refiere a un selector que apunta al segundo elemento hijo que cumple con la clase .menu__lista dentro de su contenedor principal.
+    Esto significa que se está seleccionando el segundo elemento que cumple con la clase .menu__lista para aplicarle estilos específicos. Esta pseudo-clase es útil para
+    seleccionar elementos específicos dentro de un contenedor, lo que permite aplicar estilos de manera selectiva a elementos particulares. */
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+     display: flex; /*Con esto se muestran las demas listas */
+                    /*PARA QUE LOS ELEMENTOS EN PANTALLA SE MUEVAN DE FORMA LIBRE */
+                    /*La propiedad display: flex; se utiliza para convertir un contenedor en un contenedor flexible, 
+                      lo que permite utilizar las propiedades de Flexbox para organizar y distribuir los elementos dentro de ese contenedor. 
+                      Al aplicar display: flex; a un contenedor, los elementos hijos dentro de ese contenedor se comportarán como elementos flexibles, 
+                      lo que te permite utilizar propiedades como justify-content, align-items, flex-direction, entre otras, para controlar el diseño */    
+    }
+
+    
+    .menu__lista{
+        height: auto;  /*La propiedad height: auto; se utiliza para permitir que la altura de un elemento se ajuste automáticamente según su contenido. Esto es útil
+                        cuando se desea que la altura de un elemento se adapte dinámicamente al tamaño del contenido que contiene, sin necesidad de establecer una altura fija.
+                        En el contexto de diseño web, esto es especialmente útil para elementos como contenedores de texto, imágenes u otros elementos que pueden variar 
+                        en altura. Al establecer height: auto;, el elemento se expandirá o contraerá según sea necesario para acomodar su contenido.*/
+
+        padding: 20px 17px 20px 15px; /*La propiedad padding: 20px 17px 20px 15px; se utiliza para establecer el relleno de un elemento en la siguiente secuencia: arriba, 
+                                        derecha, abajo, izquierda.
+                                        En este caso, los valores representan el relleno en píxeles en el sentido de las agujas del reloj, 
+                                        comenzando por la parte superior y continuando en sentido horario. Por ejemplo, el primer valor (20px) representa el relleno en la parte superior, 
+                                        el segundo valor (17px) representa el relleno en el lado derecho, el tercer valor (20px) representa el relleno en la parte inferior 
+                                        y el cuarto valor (15px) representa el relleno en el lado izquierdo.
+                                        Esta propiedad es útil para controlar el relleno de un elemento de manera precisa en cada uno de sus lados, 
+                                        permitiendo ajustes detallados en el diseño y la disposición de los elementos. */
+        gap: 15px; /*La propiedad gap: 15px; se utiliza para especificar el espacio entre los elementos flexibles. En el contexto de Flexbox, 
+                     esta propiedad se utiliza para agregar espacio entre los elementos en un contenedor flexible. Es especialmente útil 
+                     para crear márgenes entre los elementos y mejorar la presentación visual del diseño. */
+    }
+
+
+
+    /*La expresión .menu__lista:nth-child(3) se refiere al tercer elemento de la lista con la clase .menu__lista. Esto significa que se está seleccionando el tercer elemento 
+      de la lista para aplicarle estilos específicos en CSS. Por ejemplo, si queremos aplicar un estilo diferente al tercer elemento de la lista, podemos utilizar 
+      esta expresión para seleccionarlo y aplicar los estilos deseados. */
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse; /*El orden de los elementos se acomoda de abajo hacia arriba */
+                                        /*La propiedad flex-direction: column-reverse; se utiliza en Flexbox para establecer la dirección en la que se colocan los elementos flexibles.
+                                          En este caso, al utilizar column-reverse, los elementos se colocarán en columnas, pero en orden inverso al que se encuentran en el código HTML.
+                                          Esto significa que el último elemento en el código HTML se colocará en la parte superior y el primer elemento en la parte inferior, invirtiendo
+                                          el orden en el que aparecen en el código. */
+
+    }
+
+
+
+    .menu__itens{
+        flex-direction: row; /*La propiedad flex-direction: row; se utiliza para especificar que los elementos flexibles se coloquen en una fila, 
+                               de izquierda a derecha. Esto significa que los elementos se alinearán horizontalmente en lugar de verticalmente. 
+                               Es útil cuando se desea organizar los elementos en una fila, como en un menú horizontal, por ejemplo. */
+        gap: 15px; /*La propiedad gap: 15px; se utiliza para especificar el espacio entre los elementos flexibles. En el contexto de Flexbox, 
+                    esta propiedad se utiliza para agregar espacio entre los elementos en un contenedor flexible. Es especialmente útil 
+                    para crear márgenes entre los elementos y mejorar la presentación visual del diseño. */
+        align-items: center; /*La propiedad align-items: center en CSS se utiliza para alinear verticalmente los elementos de un contenedor flex. 
+                               Esto significa que los elementos se alinearán en el centro del eje transversal del contenedor, 
+                               lo que es útil para centrar elementos verticalmente dentro de un contenedor flex.*/
+    }
+
+
+
+    /*La propiedad "order" en Flexbox se utiliza para cambiar el orden en el que los elementos flexibles son mostrados en el contenedor. 
+      Por defecto, todos los elementos tienen un valor de "0" para la propiedad "order", lo que significa que aparecerán en el orden en el que están en el código HTML.
+      Al utilizar la propiedad "order", puedes asignar un valor numérico positivo o negativo a un elemento flexible para cambiar su posición en relación con los demás elementos. 
+      Un valor negativo moverá el elemento hacia el inicio del contenedor, mientras que un valor positivo lo moverá hacia el final.
+      Esta propiedad es útil para reorganizar visualmente los elementos en diseños flexibles sin necesidad de cambiar el orden en el código HTML. */
+    .videojuegos{
+        order:3; /*ordena el elemento <li class="videojuegos"> abajo donde dice MAS DE LA PAGINA */
+    }
+
+    .peliculas{
+        order:2; /*ordena el elemento <li class="peliculas"> abajo donde dice MAS DE LA PAGINA y .videjuegos abajo de .peliculas */
+    }
+
+    .premium{
+        order:1; /*ordena el elemento <li class="premium"> abajo donde dice MAS DE LA PAGINA y .videjuegos abajo de .peliculas */
+    }
+}
+
+
