@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <!-- Cabecera -->
     <header>
 
@@ -38,22 +37,24 @@
     </header>
 
 
-
     <!-- Vídeos -->
     <!-- Para que se muestre el contenido de seccion de videos, remueve los simbolos de comentarios que estan en la linea 195 y 374 -->
     <ul class="videos__container">
-        
+       
         <li class="videos__item">
-            <iframe  width="100%"  height="72%" src="https://www.youtube.com/embed/k01w02336zg?si=Z6suAtozjUSp68tb" 
-            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="loading-message">Cargando videos espere...</div>
+            <iframe width="100%" height="72%" src="https://www.youtube.com/embed/k01w02336zg?si=Z6suAtozjUSp68tb" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen onload="hideLoadingMessage(this)"></iframe>            
             <div class="descripcion-video">
-                <img src="./img/videos/Ellipse 11.png" alt="Logo del canal Alura Latam ">
+                <img src="./img/videos/Ellipse 11.png" alt="Logo del canal Alura Latam">
                 <div class="detalles__video">
                     <h3>Mi negocio crece - video promocional 1</h3>
                     <p>Video generado para negocio local</p>
                 </div>
             </div>
         </li>
+        
        
         <li class="videos__item">
             <iframe  width="100%"  height="72%" src="https://www.youtube.com/embed/B1-bH3Z8Qgw?si=-Y82-lQy-VVDIWQE" 
@@ -438,6 +439,7 @@
         </section>
     </footer>
 
+    <script src="script.js" defer></script>
 </body>
 
 </html>
