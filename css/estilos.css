@@ -31,6 +31,10 @@ body {
     padding: 0 25px;
 }
 
+.cabecera__texto{
+    display: none;
+}
+
 .logo__item {
     background-image: url(../img/cabecera/Logo.png);
     background-repeat: no-repeat;
