@@ -218,7 +218,8 @@ Esto significa que se está seleccionando el segundo elemento que cumple con la 
     flex-flow: column wrap; /*La propiedad flex-flow: column wrap, combina las propiedades flex-direction y flex-wrap en una sola declaración. 
                               Esto significa que los elementos hijos se organizarán en columnas y se envolverán en líneas adicionales si no caben en la columna actual.
                              Esta combinación es útil para crear diseños complejos y altamente personalizados en aplicaciones web, especialmente en el contexto de diseño responsivo. */
-}
+    height: auto;
+                            }
 
 
 /* TABLET */
