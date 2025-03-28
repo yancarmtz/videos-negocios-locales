@@ -308,10 +308,10 @@ body {
 
     /*ESTILOS DE LA SECCIÓN VÍDEOS */
 
-    .videos__container {
+    /*.videos__container {
         padding-left: 90px;
         padding-right: 17px;
-    }
+    }*/
 
     .videos__item:hover {
         transform: scale(1.3);
