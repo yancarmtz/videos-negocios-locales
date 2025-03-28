@@ -275,6 +275,7 @@ body {
     color: var(--azul-medio);
     font-weight: bold;
     padding: 10px 0 20px 0;
+
 }
 
 @media (min-width: 320px) and (max-width: 834px) {
@@ -308,14 +309,14 @@ body {
 
     /*ESTILOS DE LA SECCIÓN VÍDEOS */
 
-    /*.videos__container {
-        padding-left: 90px;
-        padding-right: 17px;
-    }*/
+    .videos__container {
+        padding-left: 7px;
+    }
 
     .videos__item:hover {
         transform: scale(1.3);
     }
+
 
     /* ESTILOS RODAPIÉ */
 
