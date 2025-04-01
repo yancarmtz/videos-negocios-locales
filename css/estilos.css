@@ -14,7 +14,7 @@ body {
     background-color: var(--azul-claro);
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: auto;
     font-size: 14px;
     color: rgb(47, 13, 240);
@@ -228,6 +228,7 @@ body {
 .videos__container {
     color: black;
     padding: 153px 20px 10px 20px;
+    padding-bottom: 8vh;
 }
 
 .loading-message {
@@ -264,7 +265,7 @@ body {
 
 .rodapie__container {
     width: 100%;
-    height: 875px;
+    height: auto;
     color: var(--gris-texto);
     line-height: 1.5;
     font-size: 16px;
@@ -276,6 +277,10 @@ body {
     font-weight: bold;
     padding: 10px 0 20px 0;
 
+}
+
+#parrafo1 {
+    font-weight: bold;
 }
 
 @media (min-width: 320px) and (max-width: 834px) {
@@ -321,8 +326,15 @@ body {
     /* ESTILOS RODAPIÉ */
 
     .rodapie__container {
-        height: 420px;
+        height: auto;
         padding-left: 74px;
+    }
+
+    .rodapie__titulo {
+        color: var(--azul-medio);
+        font-weight: bold;
+        padding: 10px 81px 20px 0;
+    
     }
     
     .cabecera__texto{
