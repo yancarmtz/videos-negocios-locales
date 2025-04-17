@@ -37,65 +37,44 @@ const videos = [
     { id: "4-A5wZjFd0k", title: "Arvore Da Vida - video promocional 9" },
     { id: "CXgJhDS8NLI", title: "Arvore Da Vida - video promocional 10" },
     { id: "smmo-M4wOdU", title: "Arvore Da Vida - video promocional 11" },
-    { id: "EkS7P3y3ogg", title: "Arvore Da Vida - video promocional 12" }
+    { id: "EkS7P3y3ogg", title: "Arvore Da Vida - video promocional 12" },
+    { id: "h572XXNmWSg", title: "Hogar es vivir - video promocional 1" },
+    { id: "dFujpjJXhG0", title: "Hogar es vivir - video promocional 2" },
+    { id: "yMFWkZzLbjA", title: "Hogar es vivir - video promocional 3" }
 ];
+
+
 
 const videosPerPage = 8;
 let currentPage = 1;
-
-/*function renderVideos() {
-    const list = document.getElementById("videos-list");
-    list.innerHTML = "";
-    const start = (currentPage - 1) * videosPerPage;
-    const end = start + videosPerPage;
-    const videosToShow = videos.slice(start, end);
-
-    videosToShow.forEach(video => {
-        const li = document.createElement("li");
-        li.classList.add("videos__item");
-        li.innerHTML = `
-            <div class="video-container">
-                <iframe width="100%" height="220px" src="https://www.youtube.com/embed/${video.id}" 
-                    title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen></iframe>
-            </div>
-            <div class="detalles__video">
-                <h3>${video.title}</h3>
-                <p>Video generado para negocio local</p>
-            </div>
-        `;
-        list.appendChild(li);
-    });
-
-    renderPagination();
-}*/
+let players = [];
 
 function renderVideos() {
     const list = document.getElementById("videos-list");
     list.innerHTML = "";
 
-    // Nuevo código: Agregar mensaje de carga
     const loadingMessage = document.createElement("p");
     loadingMessage.innerText = "Cargando videos...";
-    loadingMessage.classList.add("loading-message"); // Puedes definir esta clase en CSS
+    loadingMessage.classList.add("loading-message");
     list.appendChild(loadingMessage);
 
     const start = (currentPage - 1) * videosPerPage;
     const end = start + videosPerPage;
     const videosToShow = videos.slice(start, end);
 
-    // Simular carga con un pequeño retraso
     setTimeout(() => {
-        list.innerHTML = ""; // Quitar mensaje de carga antes de mostrar los videos
+        list.innerHTML = "";
+        players = [];
 
-        videosToShow.forEach(video => {
+        videosToShow.forEach((video, index) => {
             const li = document.createElement("li");
             li.classList.add("videos__item");
+
+            const playerId = `player-${video.id}-${index}`;
+
             li.innerHTML = `
                 <div class="video-container">
-                    <iframe width="100%" height="220px" src="https://www.youtube.com/embed/${video.id}" 
-                        title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen></iframe>
+                    <div id="${playerId}"></div>
                 </div>
                 <div class="detalles__video">
                     <h3>${video.title}</h3>
@@ -103,31 +82,100 @@ function renderVideos() {
                 </div>
             `;
             list.appendChild(li);
+
+            setTimeout(() => {
+                const player = new YT.Player(playerId, {
+                    height: '220',
+                    width: '100%',
+                    videoId: video.id,
+                    events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+                players.push(player);
+            }, 100);
         });
 
-        renderPagination(); // Renderizar la paginación después de mostrar los videos
-    }, 1000); // Retraso de 1 segundo (puedes ajustarlo)
+        renderPagination();
+    }, 1000);
 }
+
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+        players.forEach(player => {
+            if (player !== event.target) {
+                player.pauseVideo();
+            }
+        });
+    }
+}
+
 
 function renderPagination() {
     const pagination = document.getElementById("pagination");
-    pagination.innerHTML = `<p id="parrafo1">Haz clic en los números para cambiar de página.</p>`; // Mensaje de instrucción
+    pagination.innerHTML = "";
+
+    const infoText = document.createElement("p");
+    infoText.id = "parrafo1";
+    infoText.textContent = "Haz clic en los números para cambiar de página.";
+    pagination.appendChild(infoText);
+
     const totalPages = Math.ceil(videos.length / videosPerPage);
+    const isMobile = window.innerWidth < 768;
 
-    for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement("button");
-        button.innerHTML = `<strong>${i}</strong>&nbsp;&nbsp;&nbsp;`; // Número con separación
-        button.classList.add("page-button");
-        button.style.cursor = "pointer"; // Cambia el cursor a una manita
-        if (i === currentPage) button.style.fontWeight = "bold"; // Negrita en la página activa
+    if (isMobile) {
+        const navWrapper = document.createElement("div");
+        navWrapper.classList.add("pagination-mobile");
 
-        button.addEventListener("click", () => {
-            currentPage = i;
-            renderVideos();
+        // Botón anterior
+        const prevBtn = document.createElement("button");
+        prevBtn.textContent = "Anterior";
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.classList.add("pagination-button");
+        prevBtn.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderVideos();
+            }
         });
+        navWrapper.appendChild(prevBtn);
 
-        pagination.appendChild(button);
+        // Botón siguiente
+        const nextBtn = document.createElement("button");
+        nextBtn.textContent = "Siguiente";
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.classList.add("pagination-button");
+        nextBtn.addEventListener("click", () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderVideos();
+            }
+        });
+        navWrapper.appendChild(nextBtn);
+
+        pagination.appendChild(navWrapper);
+    } else {
+        const numbersWrapper = document.createElement("div");
+        numbersWrapper.classList.add("pagination-desktop");
+
+        for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement("button");
+            button.innerHTML = `<strong>${i}</strong>&nbsp;&nbsp;`; // <- 2 espacios
+            button.classList.add("page-button");
+            button.style.cursor = "pointer";
+            if (i === currentPage) button.style.fontWeight = "bold";
+
+            button.addEventListener("click", () => {
+                currentPage = i;
+                renderVideos();
+            });
+
+            numbersWrapper.appendChild(button);
+        }
+
+        pagination.appendChild(numbersWrapper);
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", renderVideos);
