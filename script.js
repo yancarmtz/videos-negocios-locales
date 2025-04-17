@@ -43,8 +43,6 @@ const videos = [
     { id: "yMFWkZzLbjA", title: "Hogar es vivir - video promocional 3" }
 ];
 
-
-
 const videosPerPage = 8;
 let currentPage = 1;
 let players = [];
@@ -117,13 +115,14 @@ function renderPagination() {
 
     const infoText = document.createElement("p");
     infoText.id = "parrafo1";
-    infoText.textContent = "Haz clic en los números para cambiar de página.";
+    infoText.textContent = "Haz clic en los numeros para cambiar de página.";
     pagination.appendChild(infoText);
 
     const totalPages = Math.ceil(videos.length / videosPerPage);
     const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
+        infoText.textContent = "Haz clic en los botones para cambiar de página.";
         const navWrapper = document.createElement("div");
         navWrapper.classList.add("pagination-mobile");
 
