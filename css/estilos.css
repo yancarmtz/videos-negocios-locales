@@ -264,13 +264,18 @@ body {
 /* RODAPIÉ */
 
 .rodapie__container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    color: var(--gris-texto);
-    line-height: 1.5;
-    font-size: 16px;
     background-color: white;
+    z-index: 998;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    
 }
+
 
 .rodapie__titulo {
     color: var(--azul-medio);
@@ -417,4 +422,16 @@ body {
     .cabecera__texto{
         display: block;
     }
+
+}
+
+#pagination {
+    position: fixed;
+    bottom: 60px; /* Deja espacio para el footer si es necesario */
+    left: 0;
+    width: 100%;
+    background-color: var(--azul-claro);
+    z-index: 999;
+    text-align: center;
+    padding: 10px 0;
 }
