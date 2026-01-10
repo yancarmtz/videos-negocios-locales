@@ -40,7 +40,12 @@ const videos = [
     { id: "EkS7P3y3ogg", title: "Arvore Da Vida - video promocional 12" },
     { id: "h572XXNmWSg", title: "Hogar es vivir - video promocional 1" },
     { id: "dFujpjJXhG0", title: "Hogar es vivir - video promocional 2" },
-    { id: "yMFWkZzLbjA", title: "Hogar es vivir - video promocional 3" }
+    { id: "yMFWkZzLbjA", title: "Hogar es vivir - video promocional 3" },
+    { id: "65yhIh_uKoA", title: "Hogar es vivir - video promocional 4" },
+    { id: "GRqk56GxBAg", title: "Hogar es vivir - video promocional 5" }, 
+    { id: "DHwE3nl3Mis", title: "Hogar es vivir - video promocional 6" }, 
+    { id: "siiDyUVPLio", title: "Hogar es vivir - video promocional 7" }, 
+    { id: "oTSDZ7uqRDU", title: "Hogar es vivir - video promocional 8" }
 ];
 
 
@@ -180,3 +185,4 @@ function renderPagination() {
 
 
 document.addEventListener("DOMContentLoaded", renderVideos);
+
