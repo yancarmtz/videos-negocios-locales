@@ -46,10 +46,10 @@ const videos = [
     { id: "DHwE3nl3Mis", title: "Hogar es vivir - video promocional 6" }, 
     { id: "siiDyUVPLio", title: "Hogar es vivir - video promocional 7" }, 
     { id: "oTSDZ7uqRDU", title: "Hogar es vivir - video promocional 8" },
-    { id: "oTSDZ7uqRDU", title: "Hogar es vivir - video promocional 9" },
-    { id: "oTSDZ7uqRDU", title: "Hogar es vivir - video promocional 10" },
-    { id: "oTSDZ7uqRDU", title: "Hogar es vivir - video promocional 11" },
-    { id: "oTSDZ7uqRDU", title: "Hogar es vivir - video promocional 12" }
+    { id: "VpdihDy8AO0", title: "Hogar es vivir - video promocional 9" },
+    { id: "066QY7qkdvI", title: "Hogar es vivir - video promocional 10" },
+    { id: "JeV2XJnRYVU", title: "Hogar es vivir - video promocional 11" },
+    { id: "4TIb0uOnzk4", title: "Hogar es vivir - video promocional 12" }
 ];
 
 
@@ -189,5 +189,6 @@ function renderPagination() {
 
 
 document.addEventListener("DOMContentLoaded", renderVideos);
+
 
 
